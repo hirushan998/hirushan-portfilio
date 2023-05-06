@@ -3,7 +3,11 @@
  */
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `Hirushan Portfollio`,
+    siteUrl: `https://www.hirushan.me/`,
+    description: `Introduce my portfillio`
   },
-  plugins: [],
+  plugins: [
+    'gatsby-plugin-postcss'
+  ],
 }
