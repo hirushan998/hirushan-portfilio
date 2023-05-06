@@ -3,7 +3,27 @@ import Image from "../assets/avatar.png";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-import { fadeIn } from "../pages/variants";
+
+const fadeIn = (direction, delay) => {
+    return {
+      hidden: {
+        y: direction === 'up' ? 80 : direction === 'down' ? -80 : 0,
+        opacity: 0,
+        x: direction === 'left' ? 80 : direction === 'right' ? -80 : 0,
+      },
+      show: {
+        y: 0,
+        x: 0,
+        opacity: 1,
+        transition: {
+          type: 'tween',
+          duration: 1.2,
+          delay: delay,
+          ease: [0.25, 0.25, 0.25, 0.75],
+        },
+      },
+    };
+};
 
 const Banner = () => {
     return (
